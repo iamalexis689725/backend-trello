@@ -27,21 +27,15 @@ def login(request):
 
 @api_view(['POST'])
 def register(request):
-    # Asegúrate de que el email está en la solicitud
     if 'email' not in request.data:
         return Response({"error": "Email is required"}, status=status.HTTP_400_BAD_REQUEST)
-
-    # Crea un nuevo usuario con los datos de la solicitud
     user = User(
         username=request.data['username'],
-        email=request.data['email'],  # Asigna el email aquí
+        email=request.data['email'],
     )
-    user.set_password(request.data['password'])  # Asegúrate de encriptar la contraseña
+    user.set_password(request.data['password'])
     user.save()
-
     token = Token.objects.create(user=user)
-
-    # Serializa los datos del usuario
     serializer = UsuarioSerializer(instance=user)
 
     return Response({'token': token.key, 'user': serializer.data}, status=status.HTTP_201_CREATED)

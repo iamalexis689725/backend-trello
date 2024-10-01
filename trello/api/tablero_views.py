@@ -16,7 +16,6 @@ class TableroViewSet(viewsets.ModelViewSet):
     queryset = Tablero.objects.all()
 
     def list(self, request, *args, **kwargs):
-        # Si se proporciona un ID de usuario en la URL, filtra por usuario
         user_id = request.query_params.get('user_id', None)
         if user_id is not None:
             try:
@@ -26,6 +25,4 @@ class TableroViewSet(viewsets.ModelViewSet):
                 return Response(serializer.data)
             except User.DoesNotExist:
                 return Response({'detail': 'Usuario no encontrado.'}, status=status.HTTP_404_NOT_FOUND)
-
-        # Si no se proporciona un ID de usuario, devuelve todos los tableros
         return super().list(request, *args, **kwargs)

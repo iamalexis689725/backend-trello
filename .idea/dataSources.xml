@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db" uuid="8d1fc79d-29de-4417-9ea1-b6f2dd539caf">
+    <data-source source="LOCAL" name="db [2]" uuid="d031478b-a159-4fc6-9c86-5ff368162b81">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:E:\Semestre 2024-2\Web III\projectTrello\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:E:\Semestre 2024-2\Web III\backend-trello\db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>
